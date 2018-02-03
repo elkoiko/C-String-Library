@@ -14,8 +14,11 @@ The library file will appear in the lib directory.
 make test
 ```
 
-Then execute it as follow.
+Then execute it as follows.
 
 ```
 ./tests/bin/runTest
 ```
+## Authors
+
+* **Thomas Couacault** - *Initial work* - [elkoiko](https://github.com/elkoiko)
