@@ -1,32 +1,34 @@
 # @Author: Thomas Couacault <elkoiko>
 # @Date:   01-Feb-2018
-# @Email:  tcouacault@gmail.com
 # @Filename: Makefile
 # @Last modified by:   elkoiko
-# @Last modified time: 01-Feb-2018
+# @Last modified time: 03-Feb-2018
 
-CC=gcc
-CFLAGS=-W -Wall -ansi -pedantic -g
-LDFLAGS=-lcString
-INC_PATH=-I../includes
-LIB_PATH=-L../lib
-BIN=test
-SRC= mainTest.c
-OBJ= $(SRC:.c=.o)
+CFLAGS += -g
+LDFLAGS =-lcString
+INC_PATH =-I../includes
+LIB_PATH =-L../lib
+BIN = runTests
+SRC = mainTest.c
+OBJ = $(SRC:.c=.o)
 
 all: $(BIN)
-	mv test ./bin
 
 %.o:	%.c
-		$(CC) -o $@ -c $< $(INC_PATH) $(CFLAGS)
+		@$(CC) -o $@ -c $< $(INC_PATH) $(CFLAGS)
 
 $(BIN):	$(OBJ)
-	$(CC) -o $@ $^ $(LIB_PATH) $(LDFLAGS)
+	@echo "*** COMPILING RUNTEST ***"
+	@$(CC) -o $@ $^ $(LIB_PATH) $(LDFLAGS)
+	@mv $(BIN) ./bin
+	@echo "*** RUNTEST READY ***"
 
 clean:
-	rm -rf *.o
+	@echo "*** CLEANING RUNTEST ***"
+	@rm -rf *.o
 
 mrproper:	clean
-	rm -rf ./bin/$(BIN)
+	@echo "*** MRPROPER RUNTEST ***"
+	@rm -rf ./bin/$(BIN)
 
 re:	mrproper all
