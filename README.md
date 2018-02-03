@@ -1,5 +1,7 @@
 # C String Library
 
+** An object oriented C string library with overloading methods **
+
 ## Compiling the library
 
 ```
@@ -7,6 +9,13 @@ make
 ```
 
 The library file will appear in the lib directory.
+
+## Basic declaration
+
+```
+String *myStrObject = s_construct("Hello World!\n");
+
+```
 
 ## Running unit tests
 
@@ -21,4 +30,4 @@ Then execute it as follows.
 ```
 ## Authors
 
-* **Thomas Couacault** - *Initial work* - [elkoiko](https://github.com/elkoiko)
+* **Thomas Couacault** - [elkoiko](https://github.com/elkoiko)
