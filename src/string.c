@@ -1,7 +1,7 @@
 /**
  * @Author: Thomas Couacault <elkoiko>
  * @Date:   01-Feb-2018
- * @Filename: construct.c
+ * @Filename: string.c
  * @Last modified by:   elkoiko
  * @Last modified time: 04-Feb-2018
  */
@@ -40,16 +40,19 @@ void s_destroy(String *str)
 
 void s_set(String *str, void *newContent, S_TYPE type)
 {
-  if (str->content)
-    free(str->content);
-  if (type == ST_STRING)
+  if (newContent != NULL)
   {
-    str->length = ((String *)newContent)->length;
-    str->content = (char *) malloc(str->length + 1);
-    strcpy(str->content, ((String *)newContent)->content);
+    if (str->content)
+      free(str->content);
+    if (type == ST_STRING)
+    {
+      str->length = ((String *)newContent)->length;
+      str->content = (char *) malloc(str->length + 1);
+      strcpy(str->content, ((String *)newContent)->content);
+    }
+    else if(type == ST_CHARSTR)
+      s_init(str, (char *)newContent);
   }
-  else if(type == ST_CHARSTR)
-    s_init(str, (char *)newContent);
 }
 
 /*** GETTERS ***/

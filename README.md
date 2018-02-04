@@ -4,9 +4,9 @@
 
 ## Compiling the library
 
-```
+``
 make
-```
+``
 
 The library file will appear in the lib directory.
 
@@ -15,19 +15,19 @@ The library file will appear in the lib directory.
 ```
 String *myStrObject = s_construct("Hello World!\n");
 
-```
+``
 
 ## Running unit tests
 
-```
+``
 make test
-```
+``
 
 Then execute it as follows.
 
-```
+``
 ./tests/bin/runTest
-```
+``
 ## Authors
 
 * **Thomas Couacault** - [elkoiko](https://github.com/elkoiko)
