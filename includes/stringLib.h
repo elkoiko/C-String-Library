@@ -14,18 +14,17 @@ typedef struct String {
   char    *content;
 } String;
 
-typedef union S_WRAPPER {
-  char   *charptr;
-  String *str;
-} S_WRAPPER;
-
 typedef enum S_TYPE {
   ST_STRING,
-  ST_CHARPTR
+  ST_CHARSTR
 } S_TYPE;
 
 String* s_construct(const char *);
 void s_destroy(String *);
 void s_init(String *, const char *);
+void s_set(String *, void *, S_TYPE);
+char *s_getContent(String *);
+size_t s_getLength(String *);
+
 
 #endif /* !STRING_LIB_H */

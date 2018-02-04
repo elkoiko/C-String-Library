@@ -19,6 +19,13 @@ String* s_construct(const char *content)
   return str;
 }
 
+void s_init(String *str, const char *content)
+{
+  str->length = strlen(content);
+  str->content = (char *) malloc(str->length + 1);
+  strcpy(str->content, content);
+}
+
 void s_destroy(String *str)
 {
   if (str)
@@ -29,9 +36,30 @@ void s_destroy(String *str)
   }
 }
 
-void s_init(String *str, const char *content)
+/*** SETTERS ***/
+
+void s_set(String *str, void *newContent, S_TYPE type)
 {
-  str->length = strlen(content);
-  str->content = (char *) malloc(str->length + 1);
-  strcpy(str->content, content);
+  if (str->content)
+    free(str->content);
+  if (type == ST_STRING)
+  {
+    str->length = ((String *)newContent)->length;
+    str->content = (char *) malloc(str->length + 1);
+    strcpy(str->content, ((String *)newContent)->content);
+  }
+  else if(type == ST_CHARSTR)
+    s_init(str, (char *)newContent);
+}
+
+/*** GETTERS ***/
+
+char *s_getContent(String *str)
+{
+  return str->content;
+}
+
+size_t s_getLength(String *str)
+{
+  return str->length;
 }
