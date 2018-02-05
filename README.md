@@ -4,30 +4,23 @@
 
 ## Compiling the library
 
-``
-make
-``
+`make`
 
 The library file will appear in the lib directory.
 
 ## Basic declaration
 
-```
-String *myStrObject = s_construct("Hello World!\n");
+`String *myStrObject = s_construct("Hello World!\n");`
 
-``
 
 ## Running unit tests
 
-``
-make test
-``
+`make test`
 
 Then execute it as follows.
 
-``
-./tests/bin/runTest
-``
+`./tests/bin/runTest`
+
 ## Authors
 
 * **Thomas Couacault** - [elkoiko](https://github.com/elkoiko)
