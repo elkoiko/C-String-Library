@@ -3,7 +3,7 @@
  * @Date:   04-Feb-2018
  * @Filename: tests.h
  * @Last modified by:   elkoiko
- * @Last modified time: 04-Feb-2018
+ * @Last modified time: 05-Feb-2018
  */
 
 #ifndef TESTS_H
@@ -17,6 +17,8 @@
 # define END_COLOR   ("\033[0m")
 
 void describe(String *);
+void printHeader(char *, char *);
 void testSetters(String *, String *);
+void testGetters(String *);
 
 #endif /* !TESTS_H */

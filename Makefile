@@ -2,7 +2,7 @@
 # @Date:   01-Feb-2018
 # @Filename: Makefile
 # @Last modified by:   elkoiko
-# @Last modified time: 04-Feb-2018
+# @Last modified time: 05-Feb-2018
 
 export CC=gcc
 export CFLAGS=-W -Wall -ansi -pedantic
@@ -11,7 +11,9 @@ INC_PATH=-I./includes
 LIB_PATH=./lib/
 TEST_PATH=./tests/
 LIB=libcString.a
-SRC= src/string.c
+SRC=	src/string.c \
+			src/setters.c \
+			src/getters.c
 OBJ= $(SRC:.c=.o)
 
 all: $(LIB)

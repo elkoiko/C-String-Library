@@ -2,15 +2,16 @@
 # @Date:   01-Feb-2018
 # @Filename: Makefile
 # @Last modified by:   elkoiko
-# @Last modified time: 04-Feb-2018
+# @Last modified time: 05-Feb-2018
 
 CFLAGS += -g
 LDFLAGS =-lcString
 INC_PATH =-I../includes -I./includes
 LIB_PATH =-L../lib
 BIN = runTests
-SRC = mainTest.c\
-			settersTest.c
+SRC =	mainTest.c \
+			settersTest.c \
+			gettersTest.c
 OBJ = $(SRC:.c=.o)
 
 all: $(BIN)
