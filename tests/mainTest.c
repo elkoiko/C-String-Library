@@ -3,7 +3,7 @@
 * @Date:   01-Feb-2018
 * @Filename: mainTest.c
  * @Last modified by:   elkoiko
- * @Last modified time: 05-Feb-2018
+ * @Last modified time: 06-Feb-2018
 */
 
 #include "tests.h"
@@ -37,6 +37,7 @@ int main(void)
   s_destroy(str2);
   printHeader("*** Destroying a NULL pointer ***\n", BEGIN_YELLOW);
   s_destroy(NULL);
+  printHeader("*** Tests ended successfully ***\n", BEGIN_GREEN);
 
   return 0;
 }

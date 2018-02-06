@@ -3,7 +3,7 @@
  * @Date:   01-Feb-2018
  * @Filename: stringLib.h
  * @Last modified by:   elkoiko
- * @Last modified time: 05-Feb-2018
+ * @Last modified time: 06-Feb-2018
  */
 
 #ifndef STRING_LIB_H
@@ -25,6 +25,9 @@ void s_destroy(String *);
 void s_init(String *, const char *);
 /* SETTERS */
 void s_set(String *, void *, S_TYPE);
+void s_upper(String *);
+void s_lower(String *);
+void s_reverse(String *);
 /* GETTERS */
 char *s_getContent(String *);
 char *s_getContentFrom(String *, size_t);
