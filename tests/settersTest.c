@@ -30,5 +30,10 @@ void testSetters(String *str, String *str2)
   printf("Before: %s\t", s_getContent(str));
   s_reverse(str);
   printf("After : %s\n", s_getContent(str));
+  printHeader("\n*** Replace a character ***\n", BEGIN_YELLOW);
+  s_set(str, "Simple string with multiples i characters", ST_CHARSTR);
+  printf("Before: %s\t", s_getContent(str));
+  s_replace(str, 'i', 'K');
+  printf("After : %s\n", s_getContent(str));
   printHeader("*** Setters tests passed ****\n", BEGIN_GREEN);
 }

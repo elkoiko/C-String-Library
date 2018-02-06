@@ -28,6 +28,7 @@ void s_set(String *, void *, S_TYPE);
 void s_upper(String *);
 void s_lower(String *);
 void s_reverse(String *);
+void s_replace(String *, char, char);
 /* GETTERS */
 char *s_getContent(String *);
 char *s_getContentFrom(String *, size_t);

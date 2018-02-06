@@ -66,3 +66,15 @@ void s_reverse(String *str)
     limit--;
   }
 }
+
+void s_replace(String *str, char current, char new)
+{
+    size_t i = 0;
+
+    while (i < str->length)
+    {
+      if (str->content[i] == current)
+        str->content[i] = new;
+      i++;
+    }
+}
