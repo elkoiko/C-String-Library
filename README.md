@@ -12,6 +12,8 @@ The library file will appear in the lib directory.
 
 `String *myStrObject = s_construct("Hello World!\n");`
 
+If you want to learn more, go to the [Wiki](https://github.com/elkoiko/C-String-Library/wiki/Home).
+
 
 ## Running unit tests
 
