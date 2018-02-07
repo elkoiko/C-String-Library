@@ -38,5 +38,6 @@ size_t s_getLength(String *);
 /* COMPARATORS */
 unsigned char s_isNumeric(String *);
 unsigned char s_isAlphaNumeric(String *);
+unsigned char s_beginsWith(String *, void *, S_TYPE);
 
 #endif /* !STRING_LIB_H */
