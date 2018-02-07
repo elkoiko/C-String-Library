@@ -3,7 +3,7 @@
 * @Date:   01-Feb-2018
 * @Filename: mainTest.c
  * @Last modified by:   elkoiko
- * @Last modified time: 06-Feb-2018
+ * @Last modified time: 07-Feb-2018
 */
 
 #include "tests.h"
@@ -31,6 +31,8 @@ int main(void)
   testGetters(str);
   /* SETTERS */
   testSetters(str, str2);
+  /* COMPARATORS */
+  testComparators(str, str2);
   /* DESTRUCT */
   printHeader("*** Destroying a String object ***\n", BEGIN_YELLOW);
   s_destroy(str);

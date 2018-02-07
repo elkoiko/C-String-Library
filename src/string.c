@@ -3,10 +3,9 @@
  * @Date:   01-Feb-2018
  * @Filename: string.c
  * @Last modified by:   elkoiko
- * @Last modified time: 05-Feb-2018
+ * @Last modified time: 07-Feb-2018
  */
 
-#include <stdlib.h>
 #include <string.h>
 #include "stringLib.h"
 

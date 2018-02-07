@@ -3,7 +3,7 @@
  * @Date:   04-Feb-2018
  * @Filename: tests.h
  * @Last modified by:   elkoiko
- * @Last modified time: 05-Feb-2018
+ * @Last modified time: 07-Feb-2018
  */
 
 #ifndef TESTS_H
@@ -20,5 +20,6 @@ void describe(String *);
 void printHeader(char *, char *);
 void testSetters(String *, String *);
 void testGetters(String *);
+void testComparators(String *, String *);
 
 #endif /* !TESTS_H */

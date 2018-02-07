@@ -3,11 +3,13 @@
  * @Date:   01-Feb-2018
  * @Filename: stringLib.h
  * @Last modified by:   elkoiko
- * @Last modified time: 06-Feb-2018
+ * @Last modified time: 07-Feb-2018
  */
 
 #ifndef STRING_LIB_H
 # define STRING_LIB_H
+
+# include <stdlib.h>
 
 typedef struct String {
   size_t  length;
@@ -34,6 +36,7 @@ char *s_getContent(String *);
 char *s_getContentFrom(String *, size_t);
 size_t s_getLength(String *);
 /* COMPARATORS */
-
+unsigned char s_isNumeric(String *);
+unsigned char s_isAlphaNumeric(String *);
 
 #endif /* !STRING_LIB_H */
