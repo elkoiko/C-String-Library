@@ -45,9 +45,8 @@ void testComparators(String *str, String *str2)
   printf("Content str1: %s\tContent str2: %s\t str1 ends with str2 content ? => %s\n",
           s_getContent(str), s_getContent(str2), BOOL_RES(s_endsWith(str, str2, ST_STRING)));
   s_set(str, "I'm happy with green tea", ST_CHARSTR);
-  s_set(str2, "with black tea", ST_CHARSTR);
   printf("Content str1: %s\tContent str2: %s\t str1 ends with str2 content ? => %s\n",
-          s_getContent(str), s_getContent(str2), BOOL_RES(s_endsWith(str, str2, ST_STRING)));
+          s_getContent(str), "with black tea", BOOL_RES(s_endsWith(str, "with black tea", ST_CHARSTR)));
   s_set(str, "I'm happy with green tea", ST_CHARSTR);
   s_set(str2, str, ST_STRING);
   printf("Content str1: %s\tContent str2: %s\t str1 ends with str2 content ? => %s\n",

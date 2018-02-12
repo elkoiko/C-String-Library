@@ -60,32 +60,25 @@ unsigned char s_beginsWith(String *str, void *str2, S_TYPE type)
 
 unsigned char s_endsWith(String *str, void *str2, S_TYPE type)
 {
-  char *toCompare = NULL;
-  long compareLength = 0;
-  long i = 0, j = 0;
+  String *toCompare = NULL;
+  size_t i = 0, j = 0, compareLength = 0;
 
   if (type == ST_STRING)
-  {
-    toCompare = ((String *)str2)->content;
-    compareLength = ((String *)str2)->length;
-  }
+    toCompare = str2;
   else if (type == ST_CHARSTR)
-  {
-    toCompare = (char *)str2;
-    compareLength = strlen(toCompare);
-  }
-  if (compareLength > (long)str->length)
+    toCompare = s_construct((char *)str2);
+  if (toCompare->length > str->length)
     return 0;
-  i = compareLength - 1;
-  j = str->length - 1;
-  while (i >= 0 && j >= 0)
+  i = str->length - toCompare->length;
+  while (toCompare->content[j] != '\0' && toCompare->content[j] == str->content[i])
   {
-    if (toCompare[i] != str->content[j])
-      return 0;
-    i--;
-    j--;
+    j++;
+    i++;
   }
-  return 1;
+  compareLength = toCompare->length;
+  if (type == ST_CHARSTR)
+    s_destroy(toCompare);
+  return (compareLength == j);
 }
 
 unsigned char s_equals(String *str, void *str2, S_TYPE type)
@@ -99,7 +92,7 @@ unsigned char s_equals(String *str, void *str2, S_TYPE type)
     toCompare = (char *)str2;
   while (toCompare[i] != '\0' && toCompare[i] == str->content[i])
     i++;
-  return !(str->length - i);
+  return (str->length == i);
 }
 
 char *s_contains(String *str, void *str2, S_TYPE type)
