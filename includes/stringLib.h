@@ -3,7 +3,7 @@
  * @Date:   01-Feb-2018
  * @Filename: stringLib.h
  * @Last modified by:   elkoiko
- * @Last modified time: 07-Feb-2018
+ * @Last modified time: 12-Feb-2018
  */
 
 #ifndef STRING_LIB_H
@@ -39,5 +39,7 @@ size_t s_getLength(String *);
 unsigned char s_isNumeric(String *);
 unsigned char s_isAlphaNumeric(String *);
 unsigned char s_beginsWith(String *, void *, S_TYPE);
+unsigned char s_endsWith(String *, void *, S_TYPE);
+unsigned char s_equals(String *, void *, S_TYPE);
 
 #endif /* !STRING_LIB_H */
