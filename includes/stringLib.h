@@ -41,5 +41,6 @@ unsigned char s_isAlphaNumeric(String *);
 unsigned char s_beginsWith(String *, void *, S_TYPE);
 unsigned char s_endsWith(String *, void *, S_TYPE);
 unsigned char s_equals(String *, void *, S_TYPE);
+char *s_contains(String *, void *, S_TYPE);
 
 #endif /* !STRING_LIB_H */

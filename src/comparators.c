@@ -8,7 +8,6 @@
 
 #include <string.h>
 #include <stringLib.h>
-#include <stdio.h>
 
 unsigned char s_isNumeric(String *str)
 {
@@ -101,4 +100,26 @@ unsigned char s_equals(String *str, void *str2, S_TYPE type)
   while (toCompare[i] != '\0' && toCompare[i] == str->content[i])
     i++;
   return !(str->length - i);
+}
+
+char *s_contains(String *str, void *str2, S_TYPE type)
+{
+  char *toCompare = NULL;
+  size_t i = 0, j = 0;
+
+  if (type == ST_STRING)
+    toCompare = ((String *)str2)->content;
+  else if (type == ST_CHARSTR)
+    toCompare = (char *)str2;
+  while (str->content[i])
+  {
+    j = 0;
+    while (toCompare[j] != '\0' && str->content[i + j] != '\0'
+            && toCompare[j] == str->content[i + j])
+      j++;
+    if (strlen(toCompare) == j)
+      return &(str->content[i]);
+    i++;
+  }
+  return NULL;
 }

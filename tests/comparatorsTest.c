@@ -63,5 +63,16 @@ void testComparators(String *str, String *str2)
   printf("Content str1: %s\tContent str2: %s\t str1 equals str2 content ? => %s\n",
           s_getContent(str), s_getContent(str2), BOOL_RES(s_equals(str, str2, ST_STRING)));
 
+  /* Contains */
+  printHeader("\n*** Contains ***\n", BEGIN_YELLOW);
+  s_set(str, "I'm a classic string", ST_CHARSTR);
+  s_set(str2, "classic", ST_CHARSTR);
+  printf("Content str1: %s\tContent str2: %s\t str1 contains str2 ? => %s\n",
+          s_getContent(str), s_getContent(str2), s_contains(str, str2, ST_STRING));
+  s_set(str, "I'm a classic string", ST_CHARSTR);
+  s_set(str2, "classic string longer", ST_CHARSTR);
+  printf("Content str1: %s\tContent str2: %s\t str1 contains str2 ? => %s\n",
+          s_getContent(str), s_getContent(str2), s_contains(str, str2, ST_STRING));
+
   printHeader("*** Comparators tests passed ****\n", BEGIN_GREEN);
 }
